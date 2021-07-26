@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".view.DetailsFragment"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+     <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+            <ImageButton
+                android:id="@+id/backFragment_imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_back_button"
+                android:background="#ffffff"
+                />
+
+            <ImageButton
+                android:id="@+id/share_bt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="160dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_share_black_24dp"
+                android:background="#ffffff"
+                />
+            <ImageButton
+                android:id="@+id/favorite_bt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/ic_favorite_border_black_24dp"
+                android:background="#ffffff"
+                />
+
+         </LinearLayout>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/linearLayoutDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                 >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:padding="10sp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/itemName_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:padding="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/likePercentage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:drawableLeft="@drawable/ic_thumbs_up"
+                        />
+
+
+                </LinearLayout>
+
+                <VideoView
+                    android:id="@+id/itemVideo"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300sp"
+                    />
+
+
+            </LinearLayout>
+
+            <TextView
+            android:id="@+id/ingredient_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_component"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_layout_component" />
+
+            <RelativeLayout
+            android:id="@+id/relativeLayout_Nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nutrition Info"
+                android:textSize="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+            <Button
+                android:id="@+id/showNutrition_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show info +"
+                android:layout_marginLeft="210dp"
+                android:background="#ffffff"
+                android:textColor="#0AAEF8"
+                style="@style/Widget.AppCompat.Light.PopupMenu"
+                />
+
+        </RelativeLayout>
+
+            <ListView
+                android:id="@+id/showNutrition_LV"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:visibility="gone"
+                />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/pre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preparation"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/Total_T"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pre"
+                    android:layout_marginTop="10dp"
+                    android:text="Total Time"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/totalTime_tv"
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Total_T"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/Prep_T"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pre"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Prep Time"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/prepTime_tv"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Prep_T"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/cook_T"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pre"
+                    android:layout_marginLeft="210dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Cook Time"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/cookTime_tv"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Prep_T"
+                    android:layout_marginLeft="210dp"
+                    android:layout_marginTop="10dp" />
+
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_layout_instruction" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
